@@ -986,10 +986,8 @@ void doAction_LiftOn(){
   Serial2.write(0xff);
   Serial2.write(0xff);
 
-  // ini lempar ke ke PIN X aja
-  
+  // ini lempar ke ke PIN X aja  
   delay(5000);
-
   
   Serial2.print("tF1BNextAction.bco=");
   Serial2.print(65504);
@@ -1011,21 +1009,21 @@ void doAction_LiftOff(){
   Serial2.write(0xff);
   Serial2.write(0xff);
   Serial2.write(0xff);
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(34815);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(34815);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 
-    // ini lempar ke ke PIN X aja
-    delay(5000);
+  // ini lempar ke ke PIN X aja
+  delay(1000);
 
-    
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(65504);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(65504);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 }
 
 void doAction_BuzzerOn(){
@@ -1041,21 +1039,21 @@ void doAction_BuzzerOn(){
   Serial2.write(0xff);
   Serial2.write(0xff);
   Serial2.write(0xff);
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(33792);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(33792);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 
-    // Lempar ke MP3
-    delay(5000);
-
-    
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(65504);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  // Lempar ke MP3
+  delay(5000);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(65504);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 }
 
 void doAction_BuzzerOff(){
@@ -1071,21 +1069,21 @@ void doAction_BuzzerOff(){
   Serial2.write(0xff);
   Serial2.write(0xff);
   Serial2.write(0xff);
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(50712);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    
-    // Lempar ke MP3
-    delay(5000);
-    
-    
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(65504);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(50712);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  
+  // Lempar ke MP3
+  delay(5000);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(65504);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 }
 
 void doAction_DO(int pinDO){
@@ -1101,21 +1099,21 @@ void doAction_DO(int pinDO){
   Serial2.write(0xff);
   Serial2.write(0xff);
   Serial2.write(0xff);
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(3000 + pinDO*100);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    
-    // Lempar ke Digital Output
-    delay(5000);
-
-    
-    Serial2.print("tF1BNextAction.bco=");
-    Serial2.print(65504);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
-    Serial2.write(0xff);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(3000 + pinDO*100);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  
+  // Lempar ke Digital Output
+  delay(5000);
+  
+  Serial2.print("tF1BNextAction.bco=");
+  Serial2.print(65504);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
+  Serial2.write(0xff);
 }
 
 void doAction_LORA(String dataDoActionLORA){
