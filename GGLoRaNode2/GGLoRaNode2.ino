@@ -1,5 +1,6 @@
-// Ubah disini kan untuk fitur Lora
-// eeeh kan coba dulu
+// Ketika upload Program ke TTGO Lora32 yg terhubung dengan Arduino Mega, maka
+// pin Ground antara TTGL Lora32 dan Arduino Mega diputuskan dulu, setelah
+// selesai terupload hubungkan kembali pin Ground antara keduanya
 #include <SPI.h>
 #include <LoRa.h>
 #include <Wire.h>  
@@ -57,7 +58,7 @@ void setup() {
   LoRa_rxMode();
 }
 
-String messageFromLora = "";
+String msgFromMega = "";
 
 void loop() {
 /*------display Oled-------------*/ 
@@ -66,10 +67,25 @@ void loop() {
   display.setFont(ArialMT_Plain_10);
   display.drawString(0, 26, "Terima data : " + Data);
   display.drawString(0, 36, "Kirim data    : " + kirimBalikData);
+  display.drawString(0, 46, "Mega data   : " + msgFromMega);
   display.display();
   display.clear();
 
-  callbackMessage(statusKirimBalikData, kirimBalikData);    // ini kaya gini dulu aja, sementara, seharunya dia ada di dalam if(Serial.available())  
+  // INI masih issue, kayanya harus pake TTL convertel 5v to 3.3V
+//  if(Serial.available()){                      // cek bahwa si lora node mengirim data cuma satu kali aja, sebenernya dia punya program otomatisasi kalau ga ke kirim, bakal ngirim lagi, karena ada callback,,,,, pokonya si lora node harus ngirim sekali aja
+//    msgFromMega = Serial.readString();
+//    LoRa_sendMessage(msgFromMega);
+
+//  display.setFont(ArialMT_Plain_16);
+//  display.drawString(0, 0, "SeTiYo Gateway");
+//  display.setFont(ArialMT_Plain_10);
+//  display.drawString(0, 26, "Terima data : " + Data);
+//  display.drawString(0, 36, "Kirim data    : " + kirimBalikData);
+//  display.drawString(0, 46, "Mega data   : " + msgFromMega);
+//  display.display();
+//  display.clear();
+//  }
+  
 }
 
 
@@ -102,6 +118,7 @@ void onReceive(int packetSize) {
 
   kirimBalikData = message;
   statusKirimBalikData = true;
+  Serial.print(kirimBalikData);    // ngirim data ke Arduino Mega
 }
 
 void callbackMessage(bool statusKirimBalik, String messageCallback){

@@ -9,7 +9,7 @@ const int blueLED = 25;
 int detik = 0;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   pinMode(blueLED, OUTPUT);
   pinMode(buttonPin, INPUT_PULLUP);
   
